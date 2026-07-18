@@ -1,0 +1,18 @@
+<사용한 모듈 라이브러리>
+import mouse
+(마우스 입출력 제어)
+import keyboard
+(키보드 입출력 제어)
+import time
+(시간, 스톱워치 기능 추가)
+
+
+>>keyboard 설명<<
+
+  키보드의 입출력을 담당하는 모듈이다. def on_key_event(event) 함수는 키보드가 눌렸을 때 작동하는 함수이다. 
+event.event_type은 2가지 속성을 가진다. down은 키보드를 누름을, up은 키보드를 땜을 의미한다. 
+위 내용은 키보드의 입력을 감지하는 명령들이었고, 이후 출력 방법을 서술한다.
+  keyboard.write("내용")은 괄호 안 문자열을 키보드로 치는 함수이다. 
+keyboard.press('enter')는 엔터를 누르는, keyboard.release('enter')는 엔터를 때는 함수로, 해당 프로젝트에서 주로 사용할 두 함수이다.
+keyboard.on_press(on_key_press)는 키보드 입력을 감지하겠다는, 예를들면 cctv의 전원이다. on.press는 클릭했을때, hook는 up, down 상태일 때 함수를 실행한다.
+
