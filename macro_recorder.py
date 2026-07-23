@@ -29,7 +29,7 @@ while round(time.time()-start_time2,3) <= stopwatch:
             del time_click_down[recorded_time]
 
     for recorded_time in list(time_click_up.keys()):
-        if now_time in time_click_up:
+        if recorded_time <= now_time:
             keyboard.release(time_click_up[recorded_time])
             del time_click_up[recorded_time]
 
