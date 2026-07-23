@@ -20,6 +20,12 @@ stopwatch = round(time.time()-start_time,3)
 
 start_time2 = round(time.time(),3)
 
-while round(time.time()-start_time2,3) != stopwatch:
-    if round(time.time()-start_time2,3) in time_click_down:
-        keyboard.press(time_click_down[round(time.time()-start_time2,3)])
+while round(time.time()-start_time2,3) <= stopwatch:
+    now_time = round(time.time()-start_time2,3)
+    if now_time in time_click_down:
+        keyboard.press(time_click_down[now_time])
+        del time_click_down[now_time]
+    if now_time in time_click_up:
+        keyboard.release(time_click_up[now_time])
+        del time_click_up[now_time]
+
