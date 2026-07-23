@@ -22,10 +22,14 @@ start_time2 = round(time.time(),3)
 
 while round(time.time()-start_time2,3) <= stopwatch:
     now_time = round(time.time()-start_time2,3)
-    if now_time in time_click_down:
-        keyboard.press(time_click_down[now_time])
-        del time_click_down[now_time]
-    if now_time in time_click_up:
-        keyboard.release(time_click_up[now_time])
-        del time_click_up[now_time]
+    
+    for recorded_time in list(time_click_down.keys()):
+        if recorded_time <= now_time:
+            keyboard.press(time_click_down[recorded_time])
+            del time_click_down[recorded_time]
+
+    for recorded_time in list(time_click_up.keys()):
+        if now_time in time_click_up:
+            keyboard.release(time_click_up[recorded_time])
+            del time_click_up[recorded_time]
 
